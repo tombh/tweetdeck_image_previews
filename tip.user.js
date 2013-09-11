@@ -4,7 +4,7 @@
 // @version     0.1
 // @description Shows Instagram thumbnails in Tweetdeck web app.
 // @updateURL   https://github.com/tombh/tweetdeck_image_previews/raw/master/tip.user.js
-// @match       https://*/*
+// @match       https://web.tweetdeck.com/*
 // @copyright   2013+, Mother Nature
 // ==/UserScript==
 
