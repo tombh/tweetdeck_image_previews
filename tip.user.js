@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name       Tweetdeck Instagram Previews
-// @namespace  http://tombh.co.uk
-// @version    0.1
+// @name        Tweetdeck Instagram Previews
+// @namespace   http://tombh.co.uk
+// @version     0.1
 // @description Shows Instagram thumbnails in Tweetdeck web app.
-// @match      https://*/*
-// @copyright  2013+, You
+// @updateURL   https://github.com/tombh/tweetdeck_image_previews/raw/master/tip.user.js
+// @match       https://*/*
+// @copyright   2013+, Mother Nature
 // ==/UserScript==
 
 TD.services.TwitterMedia.prototype.thumb = function () {
@@ -20,9 +21,9 @@ TD.services.TwitterMedia.prototype.thumb = function () {
     case "instagram2":
         return "http://instagram.com/p/" + this.url.split("/").pop() + "/media/?size=t";
     case "youtube":
-        return "https://img.youtube.com/vi/" + this.mediaId + "/default.jpg"
+        return "https://img.youtube.com/vi/" + this.mediaId + "/default.jpg";
     }
-}
+};
 
 TD.services.TwitterMedia.prototype.small = function () {
     switch (this.service) {
@@ -35,9 +36,9 @@ TD.services.TwitterMedia.prototype.small = function () {
     case "instagram2":
         return "http://instagram.com/p/" + this.url.split("/").pop() + "/media/?size=t";
     case "youtube":
-        return "https://img.youtube.com/vi/" + this.mediaId + "/mqdefault.jpg"
+        return "https://img.youtube.com/vi/" + this.mediaId + "/mqdefault.jpg";
     }
-}
+};
 
 TD.services.TwitterMedia.prototype.medium = function () {
     switch (this.service) {
@@ -50,9 +51,9 @@ TD.services.TwitterMedia.prototype.medium = function () {
     case "instagram2":
         return "http://instagram.com/p/" + this.url.split("/").pop() + "/media/?size=m";
     case "youtube":
-        return "https://img.youtube.com/vi/" + this.mediaId + "/mqdefault.jpg"
+        return "https://img.youtube.com/vi/" + this.mediaId + "/mqdefault.jpg";
     }
-}
+};
 
 TD.services.TwitterMedia.prototype.large = function () {
     switch (this.service) {
@@ -67,11 +68,11 @@ TD.services.TwitterMedia.prototype.large = function () {
     case "instagram2":
         return "http://instagram.com/p/" + this.url.split("/").pop() + "/media/?size=l";
     case "youtube":
-        return "https://img.youtube.com/vi/" + this.mediaId + "/hqdefault.jpg"
+        return "https://img.youtube.com/vi/" + this.mediaId + "/hqdefault.jpg";
     }
-}
+};
 
-TD.services.TwitterMedia.SERVICES.instagram2 = /(http:\/\/|www.)?instagram.com\/p\/[\w-]+(\/)/
+TD.services.TwitterMedia.SERVICES.instagram2 = /(http:\/\/|www.)?instagram.com\/p\/[\w-]+(\/)/;
 
 TD.services.TwitterMedia.prototype.fromURL = function (e, t, i) {
     if (this.url = i, this.shortUrl = t, this.service = e, "instagram2" === this.service && _.endsWith(this.url, "/")) this.url = this.url.substring(0, this.url.length - 1);
@@ -80,7 +81,7 @@ TD.services.TwitterMedia.prototype.fromURL = function (e, t, i) {
             n = s[1] ? parseInt(3600 * s[1], 10) : 0,
             r = s[2] ? parseInt(60 * s[2], 10) : 0,
             o = s[3] ? parseInt(s[3], 10) : 0;
-        this.startTime = n + r + o
+        this.startTime = n + r + o;
     }
-    return this
-}
+    return this;
+};
