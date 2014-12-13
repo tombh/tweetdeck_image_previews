@@ -1,3 +1,5 @@
+I'm not mainting this anymore. I'm using @eramdam's chrome extension instead: https://github.com/eramdam/BetterTweetDeck
+
 TweetDeck Instgram Previews
 ================
 
